@@ -42,3 +42,7 @@ console.log(precio_final);
 //Ejercicio 5 ejercicios en javascript
 let kilometros = 10
 let minutos = 6
+
+
+
+
