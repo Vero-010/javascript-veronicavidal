@@ -275,6 +275,109 @@ for (let i = 1; i <= 10; i++) {
     document.write(tabla + " x " + i + " = " + resultado + "</br>");
 }
 
+//Switch
+//ejercicio 1: Realizar un programa que determine que dia de la semana corresponde hoy, utilizando la funcion prompt
+let dia = prompt ("Dijite el dia de la semana")
+
+switch (dia) {
+  case "lunes":
+    console.log("¡Hoy es lunes! 😢")
+    break
+    case "martes":
+        console.log("¡Hoy es martes! 😢")
+        break
+        case "miercoles":
+            console.log("¡Hoy es miercoles! 😢")
+            break
+            case "jueves":
+                console.log("¡Hoy es jueves! 😢")
+                break
+                case "viernes":
+                    console.log("¡Hoy es viernes! 😢")
+                    break
+                    case "sabado":
+                        console.log("¡Hoy es sabado! 😢")
+                        break
+                        case "domingo":
+                            console.log("¡Hoy es domingo! 😢")
+                            break
+
+  default:
+    console.log("No corresponde al dia de la semana! 🚀")
+    break
+}
+
+//Ejercicio 2: 
+const dia = new Date().getDay()
+
+// segun el dia de la semana, mostramos un mensaje diferente
+switch (dia) {
+  case 0:
+    console.log("¡Hoy es domingo! 😴")
+    break
+  case 1:
+    console.log("¡Nooo, es lunes! 😢")
+    break
+  case 2:
+    console.log("¡Hoy es martes! 🥵")
+    break
+  case 3:
+    console.log("¡Hoy es miércoles! 🤓")
+    break
+  default:
+    console.log("Se acerca el fin de! 🚀")
+    break
+}
+//Ejercicio 3: 
+const dia = new Date().getDay()
+
+if (dia === 0) {
+  console.log("¡Hoy es domingo! 😴")
+} else if (dia === 1) {
+  console.log("¡Nooo, es lunes! 😢")
+} else if (dia === 2) {
+  console.log("¡Hoy es martes! 🥵")
+} else if (dia === 3) {
+  console.log("¡Hoy es miércoles! 🤓")
+} else {
+  console.log("Se acerca el fin de! 🚀")
+}
+//Ejercicio 4:
+const dia = new Date().getDay()
+
+switch (dia) {
+  case 0:
+  case 6:
+    console.log("¡Hoy es fin de semana! 🥳")
+    break
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+    console.log("¡Nooo, a trabajar! 😢")
+    break
+  case 5:
+    console.log("¡Hoy es viernes! 🤓")
+    break
+}
+//Ejercicio 5:
+let edad = 25;
+
+switch(true) {
+  case (edad >= 18 && edad < 25):
+    console.log("Eres mayor de edad y eres joven");
+    break;
+  case (edad >= 25 && edad < 40):
+    console.log("Eres mayor de edad y estás en plena madurez");
+    break;
+  case (edad >= 40):
+    console.log("Eres mayor de edad y estás en la mejor edad");
+    break;
+  default:
+    console.log("Eres menor de edad");
+}
+
+
 
 
 
