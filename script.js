@@ -187,6 +187,94 @@ switch (operacion) {
 console.log("El resultado es: " + resultado);
 alert("El resultado es: " + resultado);
 
+/*el usuario debe dijitar nombre y edad con la siguiente estructura de verificacion 
+1 a 18 años es un joven
+19 a 48 años es adulto
+41 a 60 años es maduro 
+61 años en adelante es anciano
+*/
+//estructuras de consolas
+//Ejercicio 1 - declarar dos variables una que sea el nombre y la otra la edad, mostrar si es mayor de edad
+
+let nomb = prompt("Ingrese su nombre");
+let age = parseInt(prompt("Ingrese su edad"));
+if (age <= 18) {
+    alert("Hola: " + nomb + " Usted es una persona joven");
+}
+else if (age >= 19 && age <= 40) {
+    alert("Hola: " + nomb + " Usted es una persona adulta");
+}
+else if (age >= 41 && age <= 60) {
+    alert("Hola: " + nomb + " Usted es una persona madura");
+}
+else {
+    alert("Hola: " + nomb + " Usted es una persona anciana");
+}
+//ciclo while
+//declarar una variable numerica que muestre la cuenta regresiva a llegar a 0
+let cuentaAtras = prompt("Ingrese un numero");
+
+while (cuentaAtras > 0) {
+  alert(cuentaAtras)
+  cuentaAtras = cuentaAtras - 1
+}
+
+alert('¡Despegue! 🚀')
+
+const NUMERO_REVISIONES = 3
+let cuentaAtras = 10
+
+while (cuentaAtras > 0) {
+  document.write(cuentaAtras + "</br>")
+
+  let revisionesRealizadas = 0
+
+  while (revisionesRealizadas < NUMERO_REVISIONES) {
+  
+    revisionesRealizadas = revisionesRealizadas + 1
+   document.write(revisionesRealizadas + ' revisiones realizadas...' + "</br>")
+  }
+
+  cuentaAtras = cuentaAtras - 1
+}
+//do while 
+/*imprimir 5 edades de diferentes personas y determinar si son mayores de edad*/
+
+let N_personas = 0;
+
+do {
+    let nombre2 = prompt("Ingrese su nombre");
+    let edad2 = parseInt(prompt("Ingrese su edad"));
+
+    if (edad2 >= 18) {
+        alert("Hola " + nombre2 + ", es mayor de edad");
+    } else {
+        alert("Hola " + nombre2 + ", es menor de edad");
+    }
+
+    N_personas++; 
+} while (N_personas < 5);
+//for
+/* imprimir las tablas de multiplicar del numero que el usuario ingrese hasta el numero 10,
+utilizando el ciclo for y mostrar en pantalla la siguiente sintaxis 
+ejemplo:
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50
+*/
+let tabla = parseInt(prompt("Ingrese el numero de la tabla de multiplicar"));
+for (let i = 1; i <= 10; i++) {
+    let resultado = tabla * i;
+    document.write(tabla + " x " + i + " = " + resultado + "</br>");
+}
+
 
 
 
