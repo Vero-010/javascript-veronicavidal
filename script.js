@@ -376,6 +376,227 @@ switch(true) {
   default:
     console.log("Eres menor de edad");
 }
+// (TALLER) Ejercicios - Estructuras de control en JavaScript
+/* 2). Dada las 3 calificaciones que el estudiante obtuvo en un curso
+a) Determinar su promedio
+b) Indicar si el estudiante aprobó o no aprobó el curso.
+Las notas deben ser de 1 a 10 y aprueba con un promedio mayor de 6*/
+
+let nota1 = parseFloat(prompt("Ingrese la primera calificación (1-10):"));
+let nota2 = parseFloat(prompt("Ingrese la segunda calificación (1-10):"));
+let nota3 = parseFloat(prompt("Ingrese la tercera calificación (1-10):"));
+
+if (
+  (nota1 >= 1 && nota1 <= 10) &&
+  (nota2 >= 1 && nota2 <= 10) &&
+  (nota3 >= 1 && nota3 <= 10)
+) {
+  let promedio = (nota1 + nota2 + nota3) / 3;
+  let mensaje = promedio > 6 ? "APROBÓ" : "NO APROBÓ";
+
+  console.log("Promedio: " + promedio.toFixed(2));
+  console.log("El estudiante " + mensaje + " el curso.");
+} else {
+  console.log("Error: Todas las notas deben estar entre 1 y 10.");
+}
+
+// 4). Leer dos números y los imprima en forma ascendente.//
+let num1 = parseInt(prompt("Ingrese el primer numero"));
+let num2 = parseInt(prompt("Ingrese el segundo numero"));
+if (num1 < num2) {
+    console.log(num1 + ", " + num2);
+} else {
+    console.log(num2 + ", " + num1);
+}
+/* 6). Dado un numero entre 1 y 7 escriba su correspondiente día de la semana
+así:
+DIA1 = LUNES
+DIA2 = MARTES
+DIA3 = MIECOLES
+DIA4 = JUEVES
+DIA5 = VIERNES
+DIA6 = SABADO
+DIA7 = DOMINGO
+*/
+
+let numero = parseInt(prompt("Ingrese un número del 1 al 7:"));
+let dia;
+switch (numero) {
+    case 1:
+        dia = "LUNES";
+        break;
+    case 2:
+        dia = "MARTES";
+        break;
+    case 3:
+        dia = "MIÉRCOLES";
+        break;
+    case 4:
+        dia = "JUEVES";
+        break;
+    case 5:
+        dia = "VIERNES";
+        break;
+    case 6:
+        dia = "SÁBADO";
+        break;
+    case 7:
+        dia = "DOMINGO";
+        break;
+    default:
+        dia = "Número inválido. Debe ingresar un número del 1 al 7.";
+}
+console.log(dia);
+
+/* 8). Un obrero necesita calcular su salario semanal, el cual se obtiene de la sig.
+manera:
+a) Si trabaja 40 horas o menos se le paga $16000 por hora
+b) Si trabaja más de 40 horas se le paga $20000 por hora
+*/
+let horasTrabajadas = parseFloat(prompt("Ingrese las horas trabajadas en la semana:"));
+
+const tarifaNormal = 16000;
+const tarifaExtra = 20000;
+const horasBase = 40;
+let salario;
+
+if (horasTrabajadas <= horasBase) {
+    salario = horasTrabajadas * tarifaNormal;
+} else {
+    let horasExtras = horasTrabajadas - horasBase;
+    salario = (horasBase * tarifaNormal) + (horasExtras * tarifaExtra);
+}
+
+console.log("El salario semanal es: $" + salario);
+
+/* 10). Hacer un programa que calcule el total a pagar por la compra de camisas. Si
+se compran tres camisas o mas se aplica un descuento del 20% sobre el total
+de la compra y si son menos de tres camisas un descuento del 10%.*/
+
+let cantidad = parseInt(prompt("Ingrese la cantidad de camisas a comprar:"));
+let precioUnitario = parseFloat(prompt("Ingrese el precio de cada camisa:"));
+
+let totalCompra = cantidad * precioUnitario;
+let descuento;
+
+if (cantidad >= 3) {
+    descuento = 0.20; 
+} else {
+    descuento = 0.10; 
+}
+
+let totalPagar = totalCompra - (totalCompra * descuento);
+
+console.log("Total a pagar: $" + totalPagar.toFixed(2));
+
+/* 12). Realizar una calculadora con las operaciones básicas suma, división,
+multiplicación y división.*/
+
+let num1 = parseFloat(prompt("Ingrese el primer número:"));
+let num2 = parseFloat(prompt("Ingrese el segundo número:"));
+
+let operacion = prompt("Ingrese la operación (+, -, *, /):");
+
+let resultado;
+
+if (operacion === "+") {
+    resultado = num1 + num2;
+} else if (operacion === "-") {
+    resultado = num1 - num2;
+} else if (operacion === "*") {
+    resultado = num1 * num2;
+} else if (operacion === "/") {
+    if (num2 !== 0) {
+        resultado = num1 / num2;
+    } else {
+        resultado = "Error: No se puede dividir por 0.";
+    }
+} else {
+    resultado = "Operación no válida.";
+}
+
+console.log("Resultado: " + resultado);
+
+/* 14). Crea un programa que calcule el índice de masa corporal (IMC) de una
+persona y muestre un mensaje indicando si la persona está bajo peso, peso
+normal, sobrepeso u obesidad.*/
+
+let peso = parseFloat(prompt("Ingrese su peso en kg:"));
+let altura = parseFloat(prompt("Ingrese su altura en metros:"));
+
+let imc = peso / (altura * altura);
+
+let mensaje;
+if (imc < 18.5) {
+    mensaje = "Bajo peso";
+} else if (imc >= 18.5 && imc < 25) {
+    mensaje = "Peso normal";
+} else if (imc >= 25 && imc < 30) {
+    mensaje = "Sobrepeso";
+} else {
+    mensaje = "Obesidad";
+}
+
+console.log("Su IMC es: " + imc.toFixed(2));
+console.log("Estado: " + mensaje);
+
+/* 16). Desarrolla un programa que solicite la nota final de la materia de algoritmos y 
+genere el criterio de la nota, de acuerdo con la siguiente tabla:
+
+Escala Nacional	          Escala Institucional
+
+Desempeño Superior	      4.5 – 5.0
+Desempeño Alto	          3.9 – 4.4
+Desempeño Básico	        3.4 – 3.8
+Desempeño Bajo	          1.0 – 3.3
+*/
+
+let nota = parseFloat(prompt("Ingrese la nota final de la materia de algoritmos (1.0 - 5.0):"));
+
+let criterio;
+
+if (nota >= 4.5 && nota <= 5.0) {
+    criterio = "Desempeño Superior";
+} else if (nota >= 3.9 && nota < 4.5) {
+    criterio = "Desempeño Alto";
+} else if (nota >= 3.4 && nota < 3.9) {
+    criterio = "Desempeño Básico";
+} else if (nota >= 1.0 && nota < 3.4) {
+    criterio = "Desempeño Bajo";
+} else {
+    criterio = "Nota fuera de rango. Ingrese un valor entre 1.0 y 5.0.";
+}
+
+console.log("Criterio de la nota: " + criterio);
+
+/* 18). Escribe un programa que imprima "Es un número menor que 10" si el número
+ingresado es menor que 10, "Es un número entre 10 y 20" si el número
+ingresado está entre 10 y 20, y "Es un número mayor que 20" si el número
+ingresado es mayor que 20.*/
+
+let numero = parseFloat(prompt("Ingrese un número:"));
+
+if (numero < 10) {
+    console.log("Es un número menor que 10");
+} else if (numero >= 10 && numero <= 20) {
+    console.log("Es un número entre 10 y 20");
+} else {
+    console.log("Es un número mayor que 20");
+}
+
+/* 20). Escribe un programa que solicite al usuario su género y su edad. Si el usuario
+es de género masculino y tiene más de 18 años, muestra un mensaje que
+indique que es elegible para el servicio militar; en caso contrario, muestra un
+mensaje que diga que no es elegible.*/
+
+let genero = prompt("Ingrese su género (Masculino/Femenino):").toLowerCase();
+let edad = parseInt(prompt("Ingrese su edad:"));
+
+if (genero === "masculino" && edad > 18) {
+    console.log("Eres elegible para el servicio militar.");
+} else {
+    console.log("No eres elegible para el servicio militar.");
+}
 
 
 
