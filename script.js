@@ -598,6 +598,51 @@ if (genero === "masculino" && edad > 18) {
     console.log("No eres elegible para el servicio militar.");
 }
 
+//EVIDENCIA DE PRODUCTO – JUEGOS EN JAVASCRIPT
+//1. Adivina el numero
+
+function adivinaElNumero() {
+  // Genera un número aleatorio entre 1 y 10
+  let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+  
+  // Se definen los intentos disponibles
+  let intentos = 3;
+
+  // Mientras queden intentos, el juego continúa
+  while (intentos > 0) {
+      // Solicita al usuario que ingrese un número
+      let intento = prompt(`Adivina el número (1-10). Intentos restantes: ${intentos}`);
+
+      // Verifica si el usuario ingresó un número válido
+      if (intento === null || isNaN(intento) || intento < 1 || intento > 10) {
+          alert("Por favor, ingresa un número válido entre 1 y 10.");
+          continue; // Vuelve a pedir un número sin restar intentos
+      }
+
+      // Convierte la entrada del usuario a número entero
+      intento = parseInt(intento);
+
+      // Comprueba si el número ingresado es el correcto
+      if (intento === numeroSecreto) {
+          alert("¡Felicidades! Has adivinado el número.");
+          return; // Termina el juego si se acierta
+      } else {
+          // Reduce la cantidad de intentos restantes
+          intentos--;
+
+          // Si ya no quedan intentos, muestra el número secreto
+          if (intentos === 0) {
+              alert(`¡Se acabaron los intentos! El número era ${numeroSecreto}.`);
+          } else {
+              alert("Número incorrecto, intenta nuevamente.");
+          }
+      }
+  }
+}
+
+// Llama a la función para iniciar el juego
+adivinaElNumero();
+
 
 
 
